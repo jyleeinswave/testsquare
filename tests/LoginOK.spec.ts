@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('loginok', async ({ page }) => {
+test.describe('loginok', async ({ page }) => {
   await page.goto('https://www.hometax.go.kr/websquare/websquare.wq?w2xPath=/ui/pp/index_pp.xml&tmIdx=&tm2lIdx=&tm3lIdx=');
   await page.frameLocator('iframe[name="txppIframe"]').getByRole('link', { name: '홈택스 로그인' }).click();
   await page.frameLocator('iframe[name="txppIframe"]').getByRole('link', { name: '아이디 로그인' }).click();
