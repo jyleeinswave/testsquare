@@ -11,8 +11,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shardIndex: [1, 2]
-        shardTotal: [2]
+        shardIndex: [1, 2, 3, 4]
+        shardTotal: [4]
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -32,8 +32,4 @@ jobs:
       with:
         name: blob-report-${{ matrix.shardIndex }}
         path: blob-report
-<<<<<<< HEAD
         retention-days: 1
-=======
-        retention-days: 1
->>>>>>> 1ff125d547f232bbc760f477cd8f65fe3ac01921
