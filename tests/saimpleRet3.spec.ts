@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('test', async ({ page }) => {
+test('SampleRet3', async ({ page }) => {
   await page.goto('https://www.hometax.go.kr/websquare/websquare.wq?w2xPath=/ui/pp/index_pp.xml&tmIdx=&tm2lIdx=&tm3lIdx=');
   await page.frameLocator('iframe[name="txppIframe"]').getByRole('link', { name: '/31 양도소득세 예정신고 및 납부' }).click();
   await page.getByRole('link', { name: '인터넷 납세서비스 국세청홈택스' }).click();
