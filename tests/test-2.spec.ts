@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('Mass Data Loads', async ({ page }) => {
+test('test', async ({ page }) => {
   await page.goto('https://www.naver.com/');
   const page1Promise = page.waitForEvent('popup');
   await page.getByRole('link', { name: '뉴스', exact: true }).click();
