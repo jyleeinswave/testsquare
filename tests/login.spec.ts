@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('test', async ({ page }) => {
+test('Login', async ({ page }) => {
   await page.goto('https://www.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&vatPage=Y');
   await page.getByRole('link', { name: '로그인' }).click();
   //await page.waitForTimeout(2000);

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('test', async ({ page }) => {
+test('Jonggane', async ({ page }) => {
   await page.goto('https://www.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&vatPage=Y');
   await page.getByRole('link', { name: '세금신고' }).click();
   await page.frameLocator('iframe[name="txppIframe"]').getByRole('link', { name: '종합부동산세' }).click();
