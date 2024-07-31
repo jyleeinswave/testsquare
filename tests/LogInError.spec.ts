@@ -1,7 +1,19 @@
 import { test, expect } from '@playwright/test';
 
-test('test', async ({ page }) => {
-  await page.goto('https://www.hometax.go.kr/websquare/websquare.wq?w2xPath=/ui/pp/index_pp.xml&tmIdx=&tm2lIdx=&tm3lIdx=');
+test('loginError', async ({ page }) => {
+
+ 
+  //await page.goto('https://www.hometax.go.kr/websquare/websquare.wq?w2xPath=/ui/pp/index_pp.xml&tmIdx=&tm2lIdx=&tm3lIdx=');
+
+  let response = await page.goto('https://www.hometax.go.kr/websquare/websquare.wq?w2xPath=/ui/pp/index_pp.xml&tmIdx=&tm2lIdx=&tm3lIdx=');
+  if (response) {
+    // 응답 상태 코드가 200인지 확인 200이 아니면 에러 발생후 리포트에서 확인
+    await test.step('response check: ', async () => {
+      expect(response.status()).toBe(200);
+      console.log("OK200", response.status())
+    });
+  }
+
   await page.frameLocator('iframe[name="txppIframe"]').getByRole('link', { name: '홈택스 로그인' }).click();
   await page.frameLocator('iframe[name="txppIframe"]').getByRole('link', { name: '아이디 로그인' }).click();
   await page.frameLocator('iframe[name="txppIframe"]').getByPlaceholder('아이디').click();
