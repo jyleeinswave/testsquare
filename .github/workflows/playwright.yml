@@ -32,8 +32,4 @@ jobs:
       with:
         name: blob-report-${{ matrix.shardIndex }}
         path: blob-report
-<<<<<<< HEAD
         retention-days: 1
-=======
-        retention-days: 1
->>>>>>> 1ff125d547f232bbc760f477cd8f65fe3ac01921
